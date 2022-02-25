@@ -1,6 +1,6 @@
 header{
     background-color: rgba(76, 187, 95,0.5);
-    position: absolute;
+    position: fixed;
     left:0px;
     top:0px;
     width: 100%;

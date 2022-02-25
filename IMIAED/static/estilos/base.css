@@ -5,6 +5,10 @@
     background: linear-gradient(to bottom, #e9ffee,5%, #eaffe4);
     height: 100%;
     width: 100%;
+    padding-top: 200px;
+    padding-left: 50px;
+    padding-right: 50px;
+    box-sizing: border-box;
 }
 *{
     font-family: arial;
