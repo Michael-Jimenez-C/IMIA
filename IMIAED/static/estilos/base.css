@@ -3,16 +3,17 @@
     left:0;
     top:0;
     background: linear-gradient(to bottom, #e9ffee,5%, #eaffe4);
-    height: 100%;
+    height: 150%;
     width: 100%;
     padding-top: 200px;
     padding-left: 50px;
     padding-right: 50px;
+    padding-bottom: 10px;
     box-sizing: border-box;
 }
 *{
     font-family: arial;
     font-size: 16pt;
-    color:rgb(1, 7, 26);
+    color:rgb(1, 21, 87);
     text-transform: capitalize;
 }
