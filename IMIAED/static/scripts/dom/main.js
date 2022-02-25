@@ -1,12 +1,8 @@
 function load(){
-    body=document.getElementById("root");
-    body.innerHTML+=lorem;
-    Modulos.barra(doc);
+    barra(document);
 }
 
-class Modulos{
-    barra(doc){
-        body =doc.getElementById("root");
-        body.innerHTML+="<img src='../static/recursos/logo.jpeg'>";
-    }
+function barra(doc){
+    body =doc.getElementById("root");
+    body.innerHTML+="<header><img src='../static/recursos/logo.jpeg'></header>";
 }
