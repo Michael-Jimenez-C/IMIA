@@ -2,5 +2,15 @@
     margin: auto;
     display: block;
     width:max-content;
-    padding-bottom:5cm;
+    padding-bottom:3cm;
+    padding-top:3cm;
+}
+
+.presentacion{
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    user-select: none;
+}
+h2.presentacion{
+    font-style: italic;
+    text-shadow: 10px 0px;
 }
