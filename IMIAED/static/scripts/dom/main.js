@@ -1,8 +1,9 @@
 function load(){
-    barra(document);
+    /*barra(document);
+    document.getElementById("root").innerHTML+=f();*/
 }
 
-function barra(doc){
+function barra(doc){/*
     body =doc.getElementById("root");
-    body.innerHTML=("<header><img src='../static/recursos/Logo.svg'></header>")+body.innerHTML;
+    body.innerHTML=("<header><img src='../static/recursos/Logo.svg'></header>")+body.innerHTML;*/
 }
