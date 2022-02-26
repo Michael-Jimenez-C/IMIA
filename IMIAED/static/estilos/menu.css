@@ -11,14 +11,6 @@ header{
     display: inline-flex;
     z-index: 100;
 }
-
-header h1{
-    font-size: 20pt;
-    text-shadow: 1px 1px;
-    user-select: none;
-    
-}
-
 header img{
     padding: 0;
     padding-right: 10px;
