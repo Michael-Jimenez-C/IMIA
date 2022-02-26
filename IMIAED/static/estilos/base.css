@@ -16,6 +16,14 @@
     font-size: 16pt;
     color:rgb(1, 21, 87);
 }
+h1{
+    text-align: Center;
+    font-size: 24pt;
+}
+h2{
+    text-align: Center;
+    font-size: 20pt;
+}
 
 .boton{
     align-self: center;
