@@ -7,6 +7,6 @@ def Home():
 
 @app.route("/pages/<id>",methods=["GET"])
 def Indice(id):
-    return None;
+    return render_template(id)
 
 app.run()
