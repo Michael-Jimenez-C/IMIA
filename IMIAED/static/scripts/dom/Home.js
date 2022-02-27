@@ -1,7 +1,7 @@
 import Recursos from './Recursos.js'
 class Home{
     constructor(){
-        Recursos.menu();  
+        Recursos.menuConTransicion();
     }
     actualizar(){
         /*setTimeout('slider()',5000);*/

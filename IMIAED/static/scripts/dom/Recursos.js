@@ -16,14 +16,17 @@ export default class Recursos{
                 
             });
         });
+    }
+
+    static menuConTransicion(){
+        Recursos.menu();
         window.onscroll = function() {
             var y = window.scrollY;
             let header=document.getElementById("header");
-            console.log(y)
             if (y>15){
-                header.classList.add('top')
+                header.classList.add('top');
             }else{
-                header.classList.remove('top')
+                header.classList.remove('top');
             }
         };
     }

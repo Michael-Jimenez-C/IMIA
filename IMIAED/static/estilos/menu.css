@@ -6,7 +6,7 @@ header{
     left:0px;
     top:0px;
     width: 100%;
-    height: 70px;
+    height: 60px;
     padding: 5px;
     padding-left:20px;
     box-sizing: border-box;
@@ -15,7 +15,7 @@ header{
 }
 @keyframes cambiar1 {
   from {
-    background-color: #eee;  }
+    background-color: rgb(199, 255, 182);  }
 
   to {
     background-color: #fff;  }
@@ -24,14 +24,14 @@ header{
 header.top{
     animation-duration: 0.3s;
     animation-name: cambiar2;
-    background-color: #eee;
+    background-color: rgb(199, 255, 182);;
 }
 @keyframes cambiar2 {
   from {
     background-color: #fff;  }
 
   to {
-    background-color: #eee;  }
+    background-color: rgb(199, 255, 182);;  }
 }
 
 
@@ -63,7 +63,6 @@ nav{
     margin-left: auto;
     height:100%;
 }
-
 .menu li{
     display:inline-block;
     cursor:pointer;
@@ -95,7 +94,7 @@ div.desplegado img{
     padding:10px 0px;
     transition: transform .3s;
     background-color:#eff;
-    margin:10px;
+    margin:9px;
     border-radius:10px;
     box-shadow: 2px 2px 0 #0000006b;
     
