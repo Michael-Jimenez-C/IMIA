@@ -34,6 +34,7 @@ header img{
 nav{
     display: flex;
     padding:0;
+    padding-right:50px;
     margin:0;
     margin-left: auto;
     height:100%;    
@@ -43,14 +44,23 @@ nav{
     display:inline-block;
     cursor:pointer;
 }
+.menu li div a{
+    padding:10px 20px;
+}
 .menu li a{
     padding:10px 20px;
 }
-.menu li a img{
-    height: auto;
+
+.menu li div img{
+    height: 15px;
+    position:relative;
+    right:10px;
+    transition: transform .3s;
 }
-.desplegado img{
-    transform:rotate(90deg)
+
+div.desplegado img{
+    transform:rotate(90deg);
+    transition: transform .3s;
 }
 
 .subMenu{
