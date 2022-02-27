@@ -2,14 +2,9 @@
     position: absolute;
     left:0;
     top:0;
-    background: linear-gradient(to bottom, #ffffff,10%, #81ff5f);
     height: auto;
     width: 100%;
-    padding-top: 200px;
-    padding-left: 100px;
-    padding-right: 100px;
-    padding-bottom: 10px;
-    box-sizing: border-box;
+    padding:0;
 }
 *{
     font-family: Helvetica;

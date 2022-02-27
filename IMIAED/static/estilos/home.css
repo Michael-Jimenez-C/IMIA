@@ -5,12 +5,29 @@
     padding-bottom:3cm;
     padding-top:3cm;
 }
-
+.opciones a{
+    user-select: none;
+}
 .presentacion{
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     user-select: none;
 }
 h2.presentacion{
     font-style: italic;
-    text-shadow: 10px 0px;
+}
+.seccion1{
+    background: linear-gradient(to bottom, #ffffff,80%, #81ff5f);
+    width: 100%;
+    height: max-content;
+    padding: 200px 0px;
+    box-sizing: border-box;
+}
+.seccion2{
+    padding-top: 2cm;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-bottom: 10px;
+    box-sizing: border-box;
+    width: 100%;
+    background-color: aquamarine;
 }

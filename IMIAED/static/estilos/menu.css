@@ -19,6 +19,16 @@ header img{
     user-select: none;
 }
 
+
+
+
+
+
+
+
+
+
+
 nav{
     display: flex;
     align-items: center;
@@ -33,4 +43,65 @@ nav div{
     padding: 5px 20px;
     margin: 0px;
     cursor: pointer;
+}
+
+
+nav div div{
+    animation-duration: 1s;
+    animation-name: desaparicion;
+    opacity:0;
+}
+
+nav div:hover> div{
+    animation-duration: 1s;
+    animation-name: aparicion;
+    opacity:100;
+}
+
+@keyframes aparicion{
+    from {
+        opacity:0
+      }
+    
+      to {
+        opacity:100
+      }
+}
+
+@keyframes desaparicion{
+    from {
+        opacity:100
+      }
+    
+      to {
+        opacity:0
+      }
+}
+
+.subMenuElement{
+	opacity:0;
+	display:block;
+	padding: 5px  10px;
+	width: max-content;
+    position:absolute;
+    width:max-content;
+    height:max-content;
+    padding: 5px 0px;
+    background-color: azure;
+    box-shadow: 0 2px 0 rgba(116, 116, 116, 0.712);
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.subMenuElement a {
+    display:block;
+	padding:10px 5px;
+	text-decoration: none;
+    background-color: azure;
+    border-bottom: 1px solid rgb(94, 94, 94);
+    border-top: 1px solid rgb(94, 94, 94);
+}
+
+.subMenuElement a:hover{
+    background-color: rgb(212, 224, 224);
 }
