@@ -24,7 +24,8 @@ header{
 header.top{
     animation-duration: 0.3s;
     animation-name: cambiar2;
-    background-color: rgb(199, 255, 182);;
+    background-color: rgb(199, 255, 182);
+    cursor:none;
 }
 @keyframes cambiar2 {
   from {
@@ -56,89 +57,99 @@ header img{
 
 
 nav{
-    display: flex;
-    padding:0;
-    padding-right:50px;
-    margin:0;
-    margin-left: auto;
-    height:100%;
+  display: flex;
+  padding:0;
+  padding-right:50px;
+  margin:0;
+  margin-left: auto;
+  height:100%;
 }
 .menu li{
-    display:inline-block;
-    cursor:pointer;
+  display:inline-block;
 }
 .menu li div a{
-    padding:10px 20px;
-    font-size:14px;
+  padding:10px 20px;
+  font-size:14px;
 }
 .menu li a{
-    padding:10px 20px;
-    font-size:14px;
+  padding:10px 20px;
+  font-size:14px;
 }
 
 .menu li div img{
-    height: 10px;
-    position:relative;
-    right:10px;
-    transition: transform .3s;
+  height: 10px;
+  position:relative;
+  right:10px;
+  transition: transform .3s;
 }
 
 div.desplegado img{
-    transform:rotate(90deg);
-    transition: transform .3s;
+  transform:rotate(90deg);
+  transition: transform .3s;
 }
 
 .subMenu{
-    position:absolute;
-    margin:0;
-    padding:10px 0px;
-    transition: transform .3s;
-    background-color:#eff;
-    margin:9px;
-    border-radius:10px;
-    box-shadow: 2px 2px 0 #0000006b;
-    
+  position:absolute;
+  margin:0;
+  padding:10px 0px;
+  transition: transform .3s;
+  background-color:#eff;
+  margin:9px;
+  border-radius:10px;
+  box-shadow: 2px 2px 0 #0000006b;
+  
 }
 .subMenu li{
-    display:block;
-    padding:  5px 0px;
-    box-shadow: 0px 1px 0 #0000006b;
+  display:block;
+  padding:  5px 0px;
+  box-shadow: 0px 1px 0 #0000006b;
 }
 .subMenu li:hover{
-    background-color:#5ac75a57;
+  background-color:#5ac75a57;
 }
 .subMenu li a{
-    padding: 10px 20px;
-    
-    font-size:12px;
-    text-decoration:none;
+  padding: 10px 20px;
+  
+  font-size:12px;
+  text-decoration:none;
 }
 
 
 .oculto{
-  animation-duration: 0.3s;
-  animation-name: ocultar;
-  opacity:0;
+animation-duration: 0.3s;
+animation-name: ocultar;
+opacity:0;
+user-select:none;
+cursor:default;
+}
+.oculto a{
+user-select:none;
+cursor:default;
+pointer-events: none;
 }
 
 @keyframes ocultar {
-  from {
-    opacity:100;  }
+from {
+  opacity:100;  }
 
-  to {
-    opacity:0;  }
+to {
+  opacity:0;  }
 }
 
 .mostrando{
-  animation-duration: 0.3s;
-  animation-name: mostrar;
-    opacity:100;
+animation-duration: 0.3s;
+animation-name: mostrar;
+opacity:100;
+cursor:pointer;
 }
 
 @keyframes mostrar {
-  from {
-    opacity:0;  }
+from {
+  opacity:0;  }
 
-  to {
-    opacity:100;  }
+to {
+  opacity:100;  }
+}
+.desplegable{
+cursor:pointer;
 }

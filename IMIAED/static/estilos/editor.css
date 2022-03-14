@@ -1,0 +1,16 @@
+canvas{
+    border: 1px gray solid;
+    width: 90%;
+    padding:0;
+    margin:auto;
+    display:block;
+    background-color: white;
+}
+
+#editor{
+    background: linear-gradient(to bottom, #ffffff,80%, #a8ff92);
+    width: 100%;
+    height: max-content;
+    padding: 100px 0px;
+    box-sizing: border-box;
+}
