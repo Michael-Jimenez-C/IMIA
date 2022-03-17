@@ -1,3 +1,0 @@
-interface Dibujable {
-    dibujar();
-  }

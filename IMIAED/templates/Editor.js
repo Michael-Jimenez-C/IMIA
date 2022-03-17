@@ -1,4 +1,3 @@
-import Recursos from "./Recursos.js";
 /*
                 Documentacion necesaria
 Eventos del canvas:http://iwokloco-appweb.blogspot.com/2012/08/html5-eventos-en-el-canvas.html
@@ -11,8 +10,8 @@ evetnos:https://www.arkaitzgarro.com/javascript/capitulo-15.html
 class Editor{
     constructor(){
         this.pint=false;
-        Recursos.menuConTransicion(); 
         this.initCom();
+        
     }
     initCom(){
         let canvas=document.getElementById("lienzo");
