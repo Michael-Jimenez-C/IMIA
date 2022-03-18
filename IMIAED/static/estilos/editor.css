@@ -2,11 +2,9 @@
     border: 1px gray solid;
     padding:0;
     display:block;
-    background-color: red;
 }
-.menu_lateral{
+#menu_lateral{
     display: flex;
-    background: blue;
     width:20%;
     flex-direction: column;
 }
@@ -14,7 +12,7 @@
     display: flex;
 }
 #slider{
-    transform:rotate(90deg);
+    /* transform:rotate(90deg); */
 }
 .editor__botones{
     width: 90%;
