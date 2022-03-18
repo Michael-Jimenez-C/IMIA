@@ -17,6 +17,7 @@ class Editor{
         this.canvas=document.getElementById("lienzo");
         this.setCanvasSize();
         this.initCom();
+        this.agregarBotones();
     }
     setCanvasSize(x=window.innerWidth*.9, y=window.innerHeight*.8){
         this.canvas.setAttribute("width", x);
@@ -37,6 +38,13 @@ class Editor{
     }
     SeEstaPulsando(){
         return this.pint;
+    }
+    agregarBotones(){
+        let buttons_div = document.getElementById("botones");
+        let n_botones = 100;
+        for(let i = 0; i < n_botones ; i++){
+            buttons_div.innerHTML += `<button class="button" id= "boton-${(i+1)}">${(i+1)}</button>`;
+        }
     }
     pintar(e){
         if(ed.SeEstaPulsando()){

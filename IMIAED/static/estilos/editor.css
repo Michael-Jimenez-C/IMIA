@@ -5,7 +5,15 @@ canvas{
     display:block;
     background-color: white;
 }
-
+.editor__botones{
+    width: 90%;
+    padding:0;
+    margin:auto;
+    display: block;
+}
+.button{
+    width: 10%;
+}
 #editor{
     background: linear-gradient(to bottom, #ffffff,80%, #a8ff92);
     width: 100%;
