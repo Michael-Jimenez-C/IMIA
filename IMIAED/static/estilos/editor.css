@@ -1,9 +1,18 @@
-canvas{
+#lienzo{
     border: 1px gray solid;
     padding:0;
-    margin:auto;
     display:block;
-    background-color: white;
+}
+#menu_lateral{
+    display: flex;
+    width:20%;
+    flex-direction: column;
+}
+.edd{
+    display: flex;
+}
+#slider{
+    /* transform:rotate(90deg); */
 }
 .editor__botones{
     width: 90%;
@@ -20,4 +29,5 @@ canvas{
     height: max-content;
     padding: 100px 0px;
     box-sizing: border-box;
+    margin:auto;
 }
