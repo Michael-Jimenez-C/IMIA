@@ -38,7 +38,7 @@ class Editor{
 
 
         //*Botones menu superior*//
-        let buttons = ["nuevo","cargar","guardar","cargar_filtro"]
+        let buttons = ["Nuevo","Cargar","Guardar","Filtro"]
         let fn=[
             ()=>{Borrador.borra(this.canvas)},
             ()=>{},
@@ -68,7 +68,7 @@ class Editor{
             s=nombres
         }
         for(let b of s){
-            contenedor.innerHTML += `<button class="button" id= "${(b)}">${(b)}</button>`;
+            contenedor.innerHTML += `<button class="button" id= "${(b)}"><img src="../static/recursos/botones/${(b)}.svg"/></button>`;
         }
     }
     SeEstaPulsando(){
