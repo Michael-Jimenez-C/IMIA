@@ -2,11 +2,13 @@
     border: 1px gray solid;
     padding:0;
     display:block;
+    background: url(../recursos/alphabg.png);
 }
 #menu_lateral{
     display: flex;
     width:20%;
     flex-direction: column;
+    user-select:none;
 }
 
 #menu_lateral button{
