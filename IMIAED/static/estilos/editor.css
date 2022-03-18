@@ -3,6 +3,7 @@
     padding:0;
     display:block;
     background: url(../recursos/alphabg.png);
+    background-size: 5%;
 }
 #menu_lateral{
     display: flex;
