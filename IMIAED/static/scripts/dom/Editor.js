@@ -52,7 +52,7 @@ class Editor{
 
         //*Botones menu lateral*//
         let herramientas = [new Lapiz(), new Pincel(), new Borrador()];
-        this.genButtons(document.getElementById("menu_lateral"),herramientas,true)
+        this.genButtons(document.getElementById("menu_botones"),herramientas,true)
         for(let b of herramientas){
             document.getElementById(b.cad()).addEventListener("click",()=>{
             this.setHerr(b)});

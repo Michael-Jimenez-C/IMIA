@@ -2,19 +2,20 @@
     border: 1px gray solid;
     padding:0;
     display:block;
+    background: url(../recursos/alphabg.png);
 }
 #menu_lateral{
     display: flex;
-    width:20%;
+    width:10%;
+    padding-top: 5px;
+    user-select:none;
     flex-direction: column;
-    padding: 10px;
+    margin: 5px;
+    flex-wrap: wrap;
 }
 .edd{
     display: flex;
-    padding: 20px;
-}
-#slider{
-    /* transform:rotate(90deg); */
+    margin: 10px;
 }
 .editor__botones{
     width: fit-content;
@@ -22,8 +23,13 @@
     margin:auto;
     display: block;
 }
+#slider{
+    width: 90%;
+    margin-bottom: 5px;
+}
 .button{
-    width: fit-content;
+    width: 50px;
+    height: 50px;
 }
 #editor{
     background: linear-gradient(to bottom, #ffffff,80%, #a8ff92);

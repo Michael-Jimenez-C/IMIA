@@ -38,4 +38,6 @@ class Borrador extends Aherr{
         return "Borrador";
     }
 }
+
+
 export{Lapiz,Pincel,Borrador}
