@@ -116,11 +116,12 @@ div.desplegado img{
 
 
 .oculto{
-animation-duration: 0.3s;
-animation-name: ocultar;
-opacity:0;
-user-select:none;
-cursor:default;
+  animation-duration: 0.3s;
+  animation-name: ocultar;
+  opacity:0;
+  user-select:none;
+  cursor:default;
+  left:-800px;
 }
 .oculto a{
 user-select:none;
