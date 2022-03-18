@@ -33,6 +33,9 @@ class Editor{
             this.pint=false;
         });
         this.canvas.addEventListener('mousemove',this.pintar)
+        this.canvas.addEventListener('mouseout',()=>{
+            this.pint=false;
+        })
     }
     SeEstaPulsando(){
         return this.pint;
