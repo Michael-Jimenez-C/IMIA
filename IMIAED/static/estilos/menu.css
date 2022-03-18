@@ -74,6 +74,7 @@ nav{
 .menu li a{
   padding:10px 20px;
   font-size:14px;
+  user-select:none;
 }
 
 .menu li div img{

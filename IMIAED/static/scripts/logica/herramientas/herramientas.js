@@ -30,6 +30,10 @@ class Borrador extends Aherr{
         let ctx=canvas.getContext("2d");
         ctx.clearRect(x-grosor/2, y-grosor/2, grosor, grosor);
     }
+    static borra(canvas){
+        let ctx=canvas.getContext("2d");
+        ctx.clearRect(0,0, window.innerWidth,window.innerHeight);
+    }
     cad(){
         return "Borrador";
     }

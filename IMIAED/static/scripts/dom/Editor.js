@@ -11,21 +11,19 @@ evetnos:https://www.arkaitzgarro.com/javascript/capitulo-15.html
 */
 class Editor{
     constructor(){
-        this.herramienta=new Pincel();
+        this.herramienta=new Lapiz();
         this.pint=false;
         Recursos.menuConTransicion(); 
         this.canvas=document.getElementById("lienzo");
         this.setCanvasSize();
         this.initCom();
-        this.agregarBotones();
-        this.agregarHerramientas();
     }
     setCanvasSize(x=window.innerWidth*.8, y=window.innerHeight*.7){
         this.canvas.setAttribute("width", x);
         this.canvas.setAttribute("height", y);
     }
     initCom(){
-        
+        //*Eventos del canvas*//
         this.canvas.addEventListener('mousedown',()=>{
             this.pint=true;
         });
@@ -36,32 +34,45 @@ class Editor{
         this.canvas.addEventListener('mouseout',()=>{
             this.pint=false;
         })
-    }
-    SeEstaPulsando(){
-        return this.pint;
-    }
-    agregarBotones(){
-        let buttons_div = document.getElementById("botones");
-        let buttons = ["nuevo","cargar","guardar","limpiar","cargar_filtro"]
-        for(let b of buttons){
-            buttons_div.innerHTML += `<button class="button" id= "${(b)}">${(b)}</button>`;
+
+
+
+        //*Botones menu superior*//
+        let buttons = ["nuevo","cargar","guardar","cargar_filtro"]
+        let fn=[
+            ()=>{Borrador.borra(this.canvas)},
+            ()=>{},
+            ()=>{},
+            ()=>{}]
+        this.genButtons(document.getElementById("botones"),buttons)
+        for(var i=0;i<buttons.length;i++){
+            document.getElementById(buttons[i]).addEventListener("click",fn[i]);
         }
-        /*for(let b of buttons){
-            document.getElementById(b).addEventListener("click",()=>{
-            });
-        }*/ 
-    }
-    agregarHerramientas(){
-        let menu_lateral = document.getElementById("menu_lateral");
-        let herramientas = [new Lapiz, new Pincel, new Borrador];
-        for(let b of herramientas){
-            menu_lateral.innerHTML += `<button class="button" id= "${(b.cad())}">${(b.cad())}</button>`;
-        }
+
+
+        //*Botones menu lateral*//
+        let herramientas = [new Lapiz(), new Pincel(), new Borrador()];
+        this.genButtons(document.getElementById("menu_lateral"),herramientas,true)
         for(let b of herramientas){
             document.getElementById(b.cad()).addEventListener("click",()=>{
             this.setHerr(b)});
         }
-        
+    }
+    genButtons(contenedor, nombres,obj=false){
+        var s=[]
+        if (obj){
+            for(let i of nombres){
+                s.push(i.cad())
+            }
+        }else{
+            s=nombres
+        }
+        for(let b of s){
+            contenedor.innerHTML += `<button class="button" id= "${(b)}">${(b)}</button>`;
+        }
+    }
+    SeEstaPulsando(){
+        return this.pint;
     }
     setHerr(Herr){
         this.herramienta=Herr
