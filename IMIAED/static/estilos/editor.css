@@ -6,12 +6,20 @@
 }
 #menu_lateral{
     display: flex;
-    width:10%;
+    
+    width:100px;
+    min-width: 80px;
     padding-top: 5px;
     user-select:none;
     flex-direction: column;
     margin: 5px;
     flex-wrap: wrap;
+}
+#input_color{
+    width: 100%;
+}
+#menu_botones{
+    justify-content: center;
 }
 .edd{
     display: flex;
