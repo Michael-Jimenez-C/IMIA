@@ -1,4 +1,5 @@
 import Recursos from "./Recursos.js";
+import {Lapiz,Pincel} from "../logica/herramientas/Lapiz.js"
 /*
                 Documentacion necesaria
 Eventos del canvas:http://iwokloco-appweb.blogspot.com/2012/08/html5-eventos-en-el-canvas.html
@@ -10,22 +11,27 @@ evetnos:https://www.arkaitzgarro.com/javascript/capitulo-15.html
 */
 class Editor{
     constructor(){
+        this.herramienta=new Lapiz();
         this.pint=false;
         Recursos.menuConTransicion(); 
+        this.canvas=document.getElementById("lienzo");
+        this.setCanvasSize();
         this.initCom();
         this.agregarBotones();
     }
+    setCanvasSize(x=window.innerWidth*.9, y=window.innerHeight*.8){
+        this.canvas.setAttribute("width", x);
+        this.canvas.setAttribute("height", y);
+    }
     initCom(){
-        let canvas=document.getElementById("lienzo");
-        canvas.setAttribute("width", window.innerWidth*.9);
-        canvas.setAttribute("height", window.innerHeight*.8);
-        canvas.addEventListener('mousedown',()=>{
+        
+        this.canvas.addEventListener('mousedown',()=>{
             this.pint=true;
         });
-        canvas.addEventListener('mouseup',()=>{
+        this.canvas.addEventListener('mouseup',()=>{
             this.pint=false;
         });
-        canvas.addEventListener('mousemove',this.pintar)
+        this.canvas.addEventListener('mousemove',this.pintar)
     }
     SeEstaPulsando(){
         return this.pint;
@@ -40,17 +46,9 @@ class Editor{
     pintar(e){
         if(ed.SeEstaPulsando()){
             let canvas=document.getElementById("lienzo");
-            let ctx=canvas.getContext("2d");
             var x=(e.pageX-canvas.offsetLeft);
             var y=(e.pageY-canvas.offsetTop);
-            console.log(x,y)
-            let grosor=2;
-            ctx.fillRect(x, y, grosor, grosor);
-            for (var i=0; i<window.innerWidth*.9;i+=100){
-                for (var j=0; j<window.innerHeight;j+=100){
-                    ctx.fillRect(i,j, grosor, grosor);
-                }
-            }
+            ed.herramienta.pintar(canvas,x,y,100);
         }
     }
 }
