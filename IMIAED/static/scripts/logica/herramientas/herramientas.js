@@ -1,8 +1,8 @@
 import Aherr from "../../api/Aherr.js"
 class Lapiz extends Aherr{
-    pintar(canvas,x,y){
+    pintar(canvas,x,y,grosor){
         let ctx=canvas.getContext("2d");
-        ctx.fillRect(x-1, y-1, 2,2);
+        ctx.fillRect(x-grosor/2, y-grosor/2, grosor, grosor);
     }
     cad(){
         return "Lapiz";

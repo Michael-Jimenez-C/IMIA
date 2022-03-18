@@ -68,10 +68,11 @@ class Editor{
     }
     pintar(e){
         if(ed.SeEstaPulsando()){
+            let slider=document.getElementById("slider");
             let canvas=document.getElementById("lienzo");
             var x=(e.pageX-canvas.offsetLeft);
             var y=(e.pageY-canvas.offsetTop);
-            ed.herramienta.pintar(canvas,x,y,10);
+            ed.herramienta.pintar(canvas,x,y,slider.value);
         }
     }
 }
