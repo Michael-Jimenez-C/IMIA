@@ -46,35 +46,25 @@ class Editor{
         for(let b of buttons){
             buttons_div.innerHTML += `<button class="button" id= "${(b)}">${(b)}</button>`;
         }
-        for(let b of buttons){
+        /*for(let b of buttons){
             document.getElementById(b).addEventListener("click",()=>{
             });
-        }
+        }*/ 
     }
     agregarHerramientas(){
         let menu_lateral = document.getElementById("menu_lateral");
-        let herramientas = ["lapiz","pincel","borrador"];
+        let herramientas = [new Lapiz, new Pincel, new Borrador];
         for(let b of herramientas){
-            menu_lateral.innerHTML += `<button class="button" id= "${(b)}">${(b)}</button>`;
+            menu_lateral.innerHTML += `<button class="button" id= "${(b.cad())}">${(b.cad())}</button>`;
         }
         for(let b of herramientas){
-            document.getElementById(b).addEventListener("click",()=>{
+            document.getElementById(b.cad()).addEventListener("click",()=>{
             this.setHerr(b)});
         }
         
     }
     setHerr(Herr){
-        switch(Herr){
-            case "lapiz":
-                this.herramienta=new Lapiz();
-                break;
-            case "pincel":
-                this.herramienta=new Pincel();
-                break;
-            case "borrador":
-                this.herramienta=new Borrador();
-                break;
-        }
+        this.herramienta=Herr
     }
     pintar(e){
         if(ed.SeEstaPulsando()){

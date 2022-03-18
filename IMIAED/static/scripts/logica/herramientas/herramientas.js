@@ -4,6 +4,9 @@ class Lapiz extends Aherr{
         let ctx=canvas.getContext("2d");
         ctx.fillRect(x-1, y-1, 2,2);
     }
+    cad(){
+        return "Lapiz";
+    }
 }
 
 class Pincel extends Aherr{
@@ -17,12 +20,18 @@ class Pincel extends Aherr{
         ctx.fill();
         ctx.stroke();
     }
+    cad(){
+        return "Pincel";
+    }
 }
 
 class Borrador extends Aherr{
     pintar(canvas,x,y,grosor){
         let ctx=canvas.getContext("2d");
         ctx.clearRect(x-grosor/2, y-grosor/2, grosor, grosor);
+    }
+    cad(){
+        return "Borrador";
     }
 }
 export{Lapiz,Pincel,Borrador}
