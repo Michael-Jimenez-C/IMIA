@@ -1,12 +1,12 @@
-import APincel from "../../api/APincel.js"
-class Lapiz extends APincel{
+import Aherr from "../../api/Aherr.js"
+class Lapiz extends Aherr{
     pintar(canvas,x,y){
         let ctx=canvas.getContext("2d");
         ctx.fillRect(x-1, y-1, 2,2);
     }
 }
 
-class Pincel extends APincel{
+class Pincel extends Aherr{
     pintar(canvas,x,y,grosor){
         let ctx=canvas.getContext("2d");
         // ctx.fillRect(x-grosor/2, y-grosor/2, grosor, grosor);
@@ -19,5 +19,10 @@ class Pincel extends APincel{
     }
 }
 
-
-export{Lapiz,Pincel}
+class Borrador extends Aherr{
+    pintar(canvas,x,y,grosor){
+        let ctx=canvas.getContext("2d");
+        ctx.clearRect(x-grosor/2, y-grosor/2, grosor, grosor);
+    }
+}
+export{Lapiz,Pincel,Borrador}

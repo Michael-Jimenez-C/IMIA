@@ -1,5 +1,5 @@
 import Recursos from "./Recursos.js";
-import {Lapiz,Pincel} from "../logica/herramientas/Lapiz.js"
+import {Lapiz,Pincel,Borrador} from "../logica/herramientas/herramientas.js"
 /*
                 Documentacion necesaria
 Eventos del canvas:http://iwokloco-appweb.blogspot.com/2012/08/html5-eventos-en-el-canvas.html
@@ -64,7 +64,17 @@ class Editor{
         
     }
     setHerr(Herr){
-        console.log("ok!");
+        switch(Herr){
+            case "lapiz":
+                this.herramienta=new Lapiz();
+                break;
+            case "pincel":
+                this.herramienta=new Pincel();
+                break;
+            case "borrador":
+                this.herramienta=new Borrador();
+                break;
+        }
     }
     pintar(e){
         if(ed.SeEstaPulsando()){
