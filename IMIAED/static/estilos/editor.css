@@ -7,21 +7,23 @@
     display: flex;
     width:20%;
     flex-direction: column;
+    padding: 10px;
 }
 .edd{
     display: flex;
+    padding: 20px;
 }
 #slider{
     /* transform:rotate(90deg); */
 }
 .editor__botones{
-    width: 90%;
+    width: fit-content;
     padding:0;
     margin:auto;
     display: block;
 }
 .button{
-    width: 10%;
+    width: fit-content;
 }
 #editor{
     background: linear-gradient(to bottom, #ffffff,80%, #a8ff92);
