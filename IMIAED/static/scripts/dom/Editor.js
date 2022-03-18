@@ -13,6 +13,7 @@ class Editor{
         this.pint=false;
         Recursos.menuConTransicion(); 
         this.initCom();
+        this.agregarBotones();
     }
     initCom(){
         let canvas=document.getElementById("lienzo");
@@ -28,6 +29,13 @@ class Editor{
     }
     SeEstaPulsando(){
         return this.pint;
+    }
+    agregarBotones(){
+        let buttons_div = document.getElementById("botones");
+        let n_botones = 100;
+        for(let i = 0; i < n_botones ; i++){
+            buttons_div.innerHTML += `<button class="button" id= "boton-${(i+1)}">${(i+1)}</button>`;
+        }
     }
     pintar(e){
         if(ed.SeEstaPulsando()){
