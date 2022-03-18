@@ -9,7 +9,13 @@ class Lapiz extends APincel{
 class Pincel extends APincel{
     pintar(canvas,x,y,grosor){
         let ctx=canvas.getContext("2d");
-        ctx.fillRect(x-grosor/2, y-grosor/2, grosor, grosor);
+        // ctx.fillRect(x-grosor/2, y-grosor/2, grosor, grosor);
+        ctx.beginPath();
+        ctx.arc(x, y, grosor/2, 0,2*Math.PI);
+        
+        ctx.fillStyle = 'black';
+        ctx.fill();
+        ctx.stroke();
     }
 }
 
