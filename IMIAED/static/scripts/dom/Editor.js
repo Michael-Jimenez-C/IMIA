@@ -4,7 +4,6 @@ import {Lapiz,Pincel,Borrador} from "../logica/herramientas/herramientas.js"
                 Documentacion necesaria
 Eventos del canvas:http://iwokloco-appweb.blogspot.com/2012/08/html5-eventos-en-el-canvas.html
 canvas:http://desarrolloweb.dlsi.ua.es/cursos/2011/html5-css3-es/html5-canvas
-paint en html:https://www.lawebdelprogramador.com/codigo/JavaScript/v4444-Paint-en-Canvas-JS.html
 evetnos:https://www.arkaitzgarro.com/javascript/capitulo-15.html
 
 
@@ -80,10 +79,11 @@ class Editor{
     pintar(e){
         if(ed.SeEstaPulsando()){
             let slider=document.getElementById("slider");
+            let color=document.getElementById("input_color");
             let canvas=document.getElementById("lienzo");
             var x=(e.pageX-canvas.offsetLeft);
             var y=(e.pageY-canvas.offsetTop);
-            ed.herramienta.pintar(canvas,x,y,slider.value);
+            ed.herramienta.pintar(canvas,x,y,slider.value,color.value);
         }
     }
 }
