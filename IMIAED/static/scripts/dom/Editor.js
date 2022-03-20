@@ -1,5 +1,6 @@
 import Recursos from "./Recursos.js";
-import {Lapiz,Pincel,Borrador} from "../logica/herramientas/herramientas.js"
+import {Lapiz,Pincel,Borrador} from "../logica/herramientas/herramientas.js";
+import * as tf from "https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.0.0/dist/tf.min.js";
 /*
                 Documentacion necesaria
 Eventos del canvas:http://iwokloco-appweb.blogspot.com/2012/08/html5-eventos-en-el-canvas.html
@@ -14,6 +15,7 @@ class Editor{
         this.pint=false;
         Recursos.menuConTransicion(); 
         this.canvas=document.getElementById("lienzo");
+        this.ctx=this.canvas.getContext("2d");
         this.setCanvasSize();
         this.initCom();
     }
@@ -39,7 +41,7 @@ class Editor{
         //*Botones menu superior*//
         let buttons = ["Nuevo","Cargar","Guardar","Filtro"]
         let fn=[
-            ()=>{Borrador.borra(this.canvas)},
+            ()=>{Borrador.borra(this.ctx)},
             ()=>{},
             ()=>{},
             ()=>{}]
@@ -80,11 +82,14 @@ class Editor{
         if(ed.SeEstaPulsando()){
             let slider=document.getElementById("slider");
             let color=document.getElementById("input_color");
-            let canvas=document.getElementById("lienzo");
-            var x=(e.pageX-canvas.offsetLeft);
-            var y=(e.pageY-canvas.offsetTop);
-            ed.herramienta.pintar(canvas,x,y,slider.value,color.value);
+            var coords=ed.mouseXY(e,ed.canvas)
+            ed.herramienta.pintar(ed.ctx,coords[0],coords[1],slider.value,color.value);
         }
+    }
+    mouseXY(e,canvas){
+        var x=(e.pageX-canvas.offsetLeft);
+        var y=(e.pageY-canvas.offsetTop);
+        return [x,y]
     }
 }
 let ed=new Editor();
