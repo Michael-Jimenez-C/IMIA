@@ -42,12 +42,13 @@ class Editor{
         let buttons = ["Nuevo","Cargar","Guardar","Filtro"]
         let fn=[
             ()=>{Borrador.borra(this.ctx)},
-            ()=>{Recursos.selector},
+            ()=>{Recursos.selector()},
             ()=>{},
             ()=>{}]
         this.genButtons(document.getElementById("botones"),buttons)
         for(var i=0;i<buttons.length;i++){
             document.getElementById(buttons[i]).addEventListener("click",fn[i]);
+            console.log(buttons[i]);
         }
 
 

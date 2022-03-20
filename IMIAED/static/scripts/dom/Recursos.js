@@ -30,8 +30,16 @@ export default class Recursos{
             }
         };
     }
+    static ventana(){
+        document.body.innerHTML+="<div id='selector'><div/>";
+        let selector = document.getElementById("selector");
+        selector.innerHTML+="<button id='cerrar' style='position:flex;flex:right'>x<button/>";
+        document.getElementById("cerrar").addEventListener("click", ()=> {document.body.removeChild(document.getElementById("selector"))});
+        return selector;
+    }
     static selector(){
-        document.body.innerHTML+="<div style='position:absolute;width:20%,heigth:100px'><div/>"
+        let selector = Recursos.ventana();
+        selector.innerHTML+="<input type='file'><input/>"
     }
 
 }
