@@ -15,7 +15,6 @@ class Lapiz extends Aherr{
 
 class Pincel extends Aherr{
     pintar(ctx,x,y,grosor,color){
-        // ctx.fillRect(x-grosor/2, y-grosor/2, grosor, grosor);
         ctx.beginPath();
         ctx.strokeStyle=color;
         ctx.arc(x, y, grosor/2, 0,2*Math.PI);

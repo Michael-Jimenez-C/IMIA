@@ -13,7 +13,7 @@ class Editor{
     constructor(){
         this.herramienta=new Lapiz();
         this.pint=false;
-        Recursos.menuConTransicion(); 
+        Recursos.menuConTransicion();
         this.canvas=document.getElementById("lienzo");
         this.ctx=this.canvas.getContext("2d");
         this.setCanvasSize();
@@ -35,14 +35,16 @@ class Editor{
         this.canvas.addEventListener('mouseout',()=>{
             this.pint=false;
         })
-
-
+        //Añadir eventos a las ventanas de seleccion
+        let selector=Recursos.ventana("selector");
 
         //*Botones menu superior*//
         let buttons = ["Nuevo","Cargar","Guardar","Filtro"]
         let fn=[
             ()=>{Borrador.borra(this.ctx)},
-            ()=>{Recursos.selector()},
+            ()=>{
+                ((selector.classList+"").includes("Voculto")!=-1)? selector.classList.remove("Voculto"):""
+            },
             ()=>{},
             ()=>{}]
         this.genButtons(document.getElementById("botones"),buttons)
