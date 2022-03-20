@@ -39,7 +39,7 @@ export default class Recursos{
     }
     static selector(){
         let selector = Recursos.ventana();
-        selector.innerHTML+="<input type='file'><input/>"
+        selector.innerHTML+="<input type='file' title='Seleccione una imagen' name='myImage' accept='image/*'><input/>"
     }
 
 }
