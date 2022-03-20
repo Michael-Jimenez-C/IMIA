@@ -53,17 +53,47 @@
 
 .ventana{
     background-color: white;
-    width:70%;
-    height: 50%;
+    width:max-content;
+    height: max-content;
     position: absolute;
     top: 200px;
-    left: 200px;
+    left: 40%;
     z-index: 600;
     border-radius: 20px;
     box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.294);
+    padding:1cm 1cm;
+    box-sizing:border-box;
 }
 
 .Voculto{
     top:-1000px;
     opacity: 0;
+}
+
+#selector ::-webkit-file-upload-button {
+    background: url(../recursos/botones/Cargar.svg);
+    background-size: 100%;
+    width:200px;
+    height:200px;
+    cursor:pointer;
+}
+
+#selector input[type=file]{
+    font-size:0;
+    display:block;
+    margin:auto;
+}
+
+.ventana button{
+    position:absolute;
+    right:0;
+    top:0;
+    border-radius:0px 10px 0px 0px;
+    border: 0;
+    background-color:white;
+    cursor:pointer;
+}
+
+.ventana button:hover{
+    background-color:#ff3a3a;
 }
