@@ -1,9 +1,12 @@
 import Aherr from "../../api/Aherr.js";
 class Lapiz extends Aherr{
-    pintar(canvas,x,y,grosor=2,color="#000"){
-        let ctx=canvas.getContext("2d");
+    pintar(ctx,x,y,grosor,color){
+        ctx.beginPath();
         ctx.strokeStyle=color;
-        ctx.fillRect(x-grosor/2, y-grosor/2, grosor, grosor);
+        ctx.rect(x-grosor/2, y-grosor/2, grosor, grosor);
+        ctx.fillStyle = color;
+        ctx.fill();
+        ctx.stroke();
     }
     cad(){
         return "Lapiz";
@@ -11,8 +14,7 @@ class Lapiz extends Aherr{
 }
 
 class Pincel extends Aherr{
-    pintar(canvas,x,y,grosor,color){
-        let ctx=canvas.getContext("2d");
+    pintar(ctx,x,y,grosor,color){
         // ctx.fillRect(x-grosor/2, y-grosor/2, grosor, grosor);
         ctx.beginPath();
         ctx.strokeStyle=color;
@@ -28,12 +30,10 @@ class Pincel extends Aherr{
 }
 
 class Borrador extends Aherr{
-    pintar(canvas,x,y,grosor){
-        let ctx=canvas.getContext("2d");
+    pintar(ctx,x,y,grosor){
         ctx.clearRect(x-grosor/2, y-grosor/2, grosor, grosor);
     }
-    static borra(canvas){
-        let ctx=canvas.getContext("2d");
+    static borra(ctx){
         ctx.clearRect(0,0, window.innerWidth,window.innerHeight);
     }
     cad(){
