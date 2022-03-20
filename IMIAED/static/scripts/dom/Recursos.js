@@ -30,4 +30,8 @@ export default class Recursos{
             }
         };
     }
+    static selector(){
+        document.body.innerHTML+="<div style='position:absolute;width:20%,heigth:100px'><div/>"
+    }
+
 }

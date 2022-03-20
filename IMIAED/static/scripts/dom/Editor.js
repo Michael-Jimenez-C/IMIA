@@ -40,7 +40,7 @@ class Editor{
         let buttons = ["Nuevo","Cargar","Guardar","Filtro"]
         let fn=[
             ()=>{Borrador.borra(this.canvas)},
-            ()=>{},
+            ()=>{Recursos.selector},
             ()=>{},
             ()=>{}]
         this.genButtons(document.getElementById("botones"),buttons)
