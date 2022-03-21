@@ -1,6 +1,7 @@
 #lienzo{
     border: 1px gray solid;
     padding:0;
+    margin:auto;
     display:block;
     background: url(../recursos/alphabg.png);
     background-size: 5%;
@@ -51,14 +52,68 @@
 
 
 
-#selector{
+.ventana{
     background-color: white;
-    width:70%;
-    height: 610px;
-    position: absolute;
+    width:30%;
+    height: max-content;
+    position: fixed;
     top: 200px;
-    left: 200px;
-    z-index: 600;
+    right: 35%;
+    z-index: 90;
     border-radius: 20px;
     box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.294);
+    padding:1cm 1cm;
+    box-sizing:border-box;
+}
+
+.Voculto{
+    top:-1000px;
+    opacity: 0;
+}
+
+#selector ::-webkit-file-upload-button {
+    background: url(../recursos/botones/Cargar.svg);
+    background-size: 100%;
+    width:200px;
+    height:200px;
+    font-size:15pt;
+    cursor:pointer;
+}
+
+#selector input[type=file]{
+    font-size:0;
+    display:block;
+    margin:auto;
+}
+
+.ventana button{
+    position:absolute;
+    right:0;
+    top:0;
+    border-radius:0px 10px 0px 0px;
+    border: 0;
+    background-color:white;
+    cursor:pointer;
+}
+
+.ventana button:hover{
+    background-color:#ff3a3a;
+}
+
+#filtro div{
+    font-size:0;
+    display:block;
+    margin:auto;
+}
+
+.ventana div button{
+    position:relative;
+    border-radius:0px 0px 0px 0px;
+    border: 0;
+    background-color:white;
+    cursor:pointer;
+}
+
+.ventana div button:hover{
+    background-color:#d8fafa;
 }

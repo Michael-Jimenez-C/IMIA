@@ -9,4 +9,9 @@ def Home():
 def Indice(id):
     return render_template(id)
 
+@app.route("/filter/<var>",methods=["GET"])
+def filtro(var):
+    r=var.split('-')
+    return str(r)
+
 app.run()

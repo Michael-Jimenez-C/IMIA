@@ -16,10 +16,6 @@ export default class Recursos{
                 
             });
         });
-    }
-
-    static menuConTransicion(){
-        Recursos.menu();
         window.onscroll = function() {
             var y = window.scrollY;
             let header=document.getElementById("header");
@@ -30,16 +26,13 @@ export default class Recursos{
             }
         };
     }
-    static ventana(){
-        document.body.innerHTML+="<div id='selector'><div/>";
-        let selector = document.getElementById("selector");
-        selector.innerHTML+="<button id='cerrar' style='position:flex;flex:right'>x<button/>";
-        document.getElementById("cerrar").addEventListener("click", ()=> {document.body.removeChild(document.getElementById("selector"))});
-        return selector;
-    }
-    static selector(){
-        let selector = Recursos.ventana();
-        selector.innerHTML+="<input type='file' title='Seleccione una imagen' name='myImage' accept='image/*'><input/>"
+    static ventana(id){
+         let ventana=document.getElementById(id);
+         let cerrar=document.getElementById(`cerrar${(id)}`);
+         cerrar.addEventListener("click",()=>{
+             ventana.classList.add("Voculto");
+         })
+         return ventana;
     }
 
 }
