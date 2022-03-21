@@ -16,10 +16,6 @@ export default class Recursos{
                 
             });
         });
-    }
-
-    static menuConTransicion(){
-        Recursos.menu();
         window.onscroll = function() {
             var y = window.scrollY;
             let header=document.getElementById("header");

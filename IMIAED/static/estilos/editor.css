@@ -54,11 +54,11 @@
 
 .ventana{
     background-color: white;
-    width:max-content;
+    width:30%;
     height: max-content;
-    position: absolute;
+    position: fixed;
     top: 200px;
-    left: 40%;
+    right: 35%;
     z-index: 90;
     border-radius: 20px;
     box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.294);
@@ -98,4 +98,22 @@
 
 .ventana button:hover{
     background-color:#ff3a3a;
+}
+
+#filtro div{
+    font-size:0;
+    display:block;
+    margin:auto;
+}
+
+.ventana div button{
+    position:relative;
+    border-radius:0px 0px 0px 0px;
+    border: 0;
+    background-color:white;
+    cursor:pointer;
+}
+
+.ventana div button:hover{
+    background-color:#d8fafa;
 }
