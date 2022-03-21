@@ -33,7 +33,7 @@ class Borrador extends Aherr{
         ctx.clearRect(x-grosor/2, y-grosor/2, grosor, grosor);
     }
     static borra(ctx){
-        ctx.clearRect(0,0, window.innerWidth,window.innerHeight);
+        ctx.clearRect(0,0, 1.5*window.innerWidth,1.5*window.innerHeight);
     }
     cad(){
         return "Borrador";

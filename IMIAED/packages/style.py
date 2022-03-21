@@ -1,10 +1,10 @@
-
-
 import numpy as np
 import matplotlib.pyplot as plt 
 import cv2 
 import tensorflow_hub as hub
 import tensorflow as tf
+
+
 model = hub.load('https://tfhub.dev/google/magenta/arbitrary-image-stylization-v1-256/2')
 
 def load_image(img_path):

@@ -1,6 +1,7 @@
 #lienzo{
     border: 1px gray solid;
     padding:0;
+    margin:auto;
     display:block;
     background: url(../recursos/alphabg.png);
     background-size: 5%;
@@ -58,7 +59,7 @@
     position: absolute;
     top: 200px;
     left: 40%;
-    z-index: 600;
+    z-index: 90;
     border-radius: 20px;
     box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.294);
     padding:1cm 1cm;
@@ -75,6 +76,7 @@
     background-size: 100%;
     width:200px;
     height:200px;
+    font-size:15pt;
     cursor:pointer;
 }
 

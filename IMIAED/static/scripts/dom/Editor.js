@@ -1,6 +1,5 @@
 import Recursos from "./Recursos.js";
 import {Lapiz,Pincel,Borrador} from "../logica/herramientas/herramientas.js";
-import * as tf from "https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.0.0/dist/tf.min.js";
 /*
                 Documentacion necesaria
 Eventos del canvas:http://iwokloco-appweb.blogspot.com/2012/08/html5-eventos-en-el-canvas.html
@@ -25,8 +24,10 @@ class Editor{
     }
     initCom(){
         //*Eventos del canvas*//
-        this.canvas.addEventListener('mousedown',()=>{
+        this.canvas.addEventListener('mousedown',(e)=>{
+            if(e.button==0){
             this.pint=true;
+            }
         });
         this.canvas.addEventListener('mouseup',()=>{
             this.pint=false;
@@ -37,7 +38,7 @@ class Editor{
         })
         //Añadir eventos a las ventanas de seleccion
         let selector=Recursos.ventana("selector");
-
+        document.getElementById("file").addEventListener("change",this.cargarImagenes,false);
         //*Botones menu superior*//
         let buttons = ["Nuevo","Cargar","Guardar","Filtro"]
         let fn=[
@@ -45,7 +46,7 @@ class Editor{
             ()=>{
                 ((selector.classList+"").includes("Voculto")!=-1)? selector.classList.remove("Voculto"):""
             },
-            ()=>{},
+            ()=>{print()},
             ()=>{}]
         this.genButtons(document.getElementById("botones"),buttons)
         for(var i=0;i<buttons.length;i++){
@@ -79,7 +80,7 @@ class Editor{
         return this.pint;
     }
     setHerr(Herr){
-        this.herramienta=Herr
+        this.herramienta=Herr;
     }
     pintar(e){
         if(ed.SeEstaPulsando()){
@@ -93,6 +94,19 @@ class Editor{
         var x=(e.pageX-canvas.offsetLeft);
         var y=(e.pageY-canvas.offsetTop);
         return [x,y]
+    }
+    cargarImagenes(e){
+        var reader = new FileReader();
+        reader.onload = (function() {
+            return function(e) {
+                var img=new Image();
+                img.src=e.target.result;
+                //document.body.appendChild(img);
+                ed.setCanvasSize(img.width,img.height);
+                ed.ctx.drawImage(img,0,0,img.width,img.height);
+            };
+          })(e.target.files[0])
+          reader.readAsDataURL(e.target.files[0]);
     }
 }
 let ed=new Editor();
