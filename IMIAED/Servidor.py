@@ -1,4 +1,6 @@
 from flask import Flask, render_template, escape
+import packages.Imagen as Imagen
+import packages.style as st
 app=Flask(__name__)
 
 @app.route("/",methods=["GET"])
@@ -11,7 +13,10 @@ def Indice(id):
 
 @app.route("/filter/<var>",methods=["GET"])
 def filtro(var):
+    ##filtro-imagen-ancho-alto-img2
     r=var.split('-')
-    return str(r)
+    img=Imagen(r[1],r[2],r[3])
+    st.filtro(img,"")
+    return None
 
 app.run()

@@ -12,12 +12,12 @@ export default class FUnion{
             }
         }
         console.log(s.length)
-        fetch(`http://127.0.0.1:5000/filter/Fu-${s}-${"none"}`)
+        fetch(`http://127.0.0.1:5000/filter/Fu-${s}-${canvas.width}-${canvas.height}-${"monet"}`)
         .then(response => response)
         .then(data => console.log(data));
     }
     cad(){
-        return "union"
+        return "FUnion"
     }
     
 }
