@@ -2,7 +2,7 @@ export default class FUnion{
     constructor(){
     
     }
-    async gen(canvas){
+    async gen(canvas, filtro){
         let ctx=canvas.getContext("2d");
         let img=ctx.getImageData(0,0,canvas.width,canvas.height).data;
         var s=[];
@@ -12,7 +12,7 @@ export default class FUnion{
             }
         }
         var data = {"pixeles": s, "ancho": canvas.width, "alto":canvas.height};
-        let response = await fetch(`http://127.0.0.1:5000/filter/monet`,{
+        let response = await fetch(`http://127.0.0.1:5000/filter/`+filtro,{
             method:"POST",
             headers: {
                 'Content-Type': 'application/json'

@@ -4,7 +4,9 @@ import Pincel from "../logica/herramientas/Pincel.js";
 import PincelC from "../logica/herramientas/PincelContinuo.js";
 import Borrador from "../logica/herramientas/Borrador.js";
 import EGrises from "../logica/filtros/EscalaGrises.js";
-import FUnion from "../logica/filtros/Union.js";
+import Monet from "../logica/filtros/Monet.js";
+import Gogh from "../logica/filtros/Gogh.js";
+import Ola from "../logica/filtros/Ola.js";
 /*
                 Documentacion necesaria
 Eventos del canvas:http://iwokloco-appweb.blogspot.com/2012/08/html5-eventos-en-el-canvas.html
@@ -80,7 +82,7 @@ class Editor{
     }
     initMenuFiltros(menuFiltros){
         /*Filtros normales*/
-        let filtros=[new EGrises(), new FUnion()];
+        let filtros=[new EGrises(), new Monet(), new Gogh(), new Ola()];
         this.genButtons(menuFiltros.lastElementChild, filtros,true);
         
         for(let i of filtros){

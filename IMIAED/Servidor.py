@@ -24,6 +24,9 @@ def filtro(var):
         img=Imagen.Imagen(imgdata['pixeles'],imgdata['ancho'],imgdata['alto'])
         if var == "monet":
             s = st.filtro("monet.jpeg")
-            return jsonify({"pixeles": s})
-
+        elif var == "gogh":
+            s = st.filtro("bag.jpg")
+        elif var == "ola":
+            s = st.filtro("ola.jpeg")
+        return jsonify({"pixeles": s})
 app.run()
