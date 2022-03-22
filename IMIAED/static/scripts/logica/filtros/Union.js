@@ -2,31 +2,28 @@ export default class FUnion{
     constructor(){
     
     }
-    gen(canvas){/*
+    async gen(canvas){
         let ctx=canvas.getContext("2d");
         let img=ctx.getImageData(0,0,canvas.width,canvas.height).data;
         var s=[];
         for(var i=0;i<img.length;i+=4){
-            for(var k=0; i<3; i++){
+            for(var k=0; k<3; k++){
                 s.push(img[i+k])
             }
         }
-        console.log(s.length)
-        var data = {username: 'example'};
-        fetch(`http://127.0.0.1:5000/filter/a`,{
+        var data = {"pixeles": s, "ancho": canvas.width, "alto":canvas.height};
+        let response = await fetch(`http://127.0.0.1:5000/filter/a`,{
             method:"POST",
             headers: {
                 'Content-Type': 'application/json'
             },
-            body:{
-                "pixeles":(s+""),
-                "ancho":canvas.width,
-                "alto":canvas.height
-            }
+            body:JSON.stringify(data)
         })
-        .then(response => response)
-        .then(data => console.log(data));*/
-        
+        if (response.ok) {
+            let json = await response.json();
+            console.log(json)
+        }
+
     }
     cad(){
         return "FUnion"

@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, jsonify
 import packages.Imagen as Imagen
 import os
 #import packages.style as st
@@ -13,12 +13,17 @@ def Home():
 @app.route("/pages/<id>",methods=["GET"])
 def Indice(id):
     return render_template(id)
-'''
+
 @app.route("/filter/<var>",methods=["GET","POST"])
 def filtro(var):
     ##var:nombre del filtro
     if request.method == 'POST':
-        img=Imagen.Imagen(request.form['pixeles'],request.form['ancho'],request.form['alto'])
-    return "<h1>ok</h1>"
-'''
+        imgdata=request.get_json()
+        print(type(imgdata['pixeles']))
+        img=Imagen.Imagen(imgdata['pixeles'],imgdata['ancho'],imgdata['alto'])
+        return jsonify(img.color)
+
+@app.route("/hola",methods=["GET","POST"])
+def hola():
+    return jsonify({"h":"hola"})
 app.run()

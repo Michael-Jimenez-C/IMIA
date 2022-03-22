@@ -4,9 +4,7 @@ import os
 class Imagen:
     def __init__(self,pix,ancho,alto):
         a=open("d.txt","w")
-        a.write(pix)
         a.close()
-        pix=pix.split(",")
         ancho=int(ancho)
         alto=int(alto)
         for i in range(len(pix)):
@@ -28,5 +26,8 @@ class Imagen:
             b.append(pix[i+2])
         for i in range(ancho):
             for j in range(alto):
-                img.putpixel((i,j),(r[i*ancho+j],g[i*ancho+j],b[i*ancho+j]))
-        img.save("prb.jpg")
+                img.putpixel((i,j),(r[j*ancho+i],g[j*ancho+i],b[j*ancho+i]))
+        self.color={"r":r,
+                    "g":g,
+                    "b":b}
+        img.save("./IMIAED/packages/imagenE.png")
