@@ -4,7 +4,7 @@ import Pincel from "../logica/herramientas/Pincel.js";
 import PincelC from "../logica/herramientas/PincelContinuo.js";
 import Borrador from "../logica/herramientas/Borrador.js";
 import EGrises from "../logica/filtros/EscalaGrises.js";
-import Union from "../logica/filtros/Union.js";
+import FUnion from "../logica/filtros/Union.js";
 /*
                 Documentacion necesaria
 Eventos del canvas:http://iwokloco-appweb.blogspot.com/2012/08/html5-eventos-en-el-canvas.html
@@ -79,8 +79,10 @@ class Editor{
         this.initMenuFiltros(menuFiltros);
     }
     initMenuFiltros(menuFiltros){
-        let filtros=[new EGrises(), new Union()];
+        /*Filtros normales*/
+        let filtros=[new EGrises(), new FUnion()];
         this.genButtons(menuFiltros.lastElementChild, filtros,true);
+        
         for(let i of filtros){
             document.getElementById(i.cad()).addEventListener("click",()=>{
                 i.gen(ed.canvas);
@@ -97,7 +99,8 @@ class Editor{
             s=nombres
         }
         for(let b of s){
-            contenedor.innerHTML += `<button class="button" id= "${(b)}"><img src="../static/recursos/botones/${(b)}.svg"/></button>`;
+                contenedor.innerHTML += `<button class="button" id= "${(b)}"><img src="../static/recursos/botones/${(b)}.svg"/></button>`;
+            
         }
     }
 

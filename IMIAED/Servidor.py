@@ -1,7 +1,10 @@
-from flask import Flask, render_template, escape
+from flask import Flask, render_template, request
 import packages.Imagen as Imagen
-import packages.style as st
+import os
+#import packages.style as st
 app=Flask(__name__)
+
+app.config['UPLOAD_FOLDER'] = './Archivos'
 
 @app.route("/",methods=["GET"])
 def Home():
@@ -10,13 +13,12 @@ def Home():
 @app.route("/pages/<id>",methods=["GET"])
 def Indice(id):
     return render_template(id)
-
-@app.route("/filter/<var>",methods=["GET"])
+'''
+@app.route("/filter/<var>",methods=["GET","POST"])
 def filtro(var):
-    ##filtro-imagen-ancho-alto-img2
-    r=var.split('-')
-    img=Imagen(r[1],r[2],r[3])
-    st.filtro(img,"")
-    return None
-
+    ##var:nombre del filtro
+    if request.method == 'POST':
+        img=Imagen.Imagen(request.form['pixeles'],request.form['ancho'],request.form['alto'])
+    return "<h1>ok</h1>"
+'''
 app.run()

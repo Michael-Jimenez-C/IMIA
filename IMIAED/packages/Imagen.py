@@ -3,7 +3,10 @@ import matplotlib.pyplot as plt
 import os
 class Imagen:
     def __init__(self,pix,ancho,alto):
-        #pix=pix.split(",")
+        a=open("d.txt","w")
+        a.write(pix)
+        a.close()
+        pix=pix.split(",")
         ancho=int(ancho)
         alto=int(alto)
         for i in range(len(pix)):
@@ -26,14 +29,4 @@ class Imagen:
         for i in range(ancho):
             for j in range(alto):
                 img.putpixel((i,j),(r[i*ancho+j],g[i*ancho+j],b[i*ancho+j]))
-        self.img=img
-        plt.imshow(img)
-        plt.axis("off")
-        plt.savefig("./img.png")
-        plt.show()
-
-
-
-
-        
-
+        img.save("prb.jpg")
