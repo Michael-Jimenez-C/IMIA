@@ -12,7 +12,7 @@ export default class FUnion{
             }
         }
         var data = {"pixeles": s, "ancho": canvas.width, "alto":canvas.height};
-        let response = await fetch(`http://127.0.0.1:5000/filter/a`,{
+        let response = await fetch(`http://127.0.0.1:5000/filter/monet`,{
             method:"POST",
             headers: {
                 'Content-Type': 'application/json'
@@ -21,9 +21,14 @@ export default class FUnion{
         })
         if (response.ok) {
             let json = await response.json();
-            console.log(json)
+            let s = json["pixeles"]
+            console.log(json);
+            let datosI = ctx.getImageData(0,0,canvas.width,canvas.height);
+            for(var i=0;i<img.length;i+=1){
+                datosI.data[i] = s[i];
+            }
+            ctx.putImageData(datosI,0,0);
         }
-
     }
     cad(){
         return "FUnion"

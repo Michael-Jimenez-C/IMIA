@@ -1,7 +1,8 @@
 from flask import Flask, render_template, request, jsonify
 import packages.Imagen as Imagen
 import os
-#import packages.style as st
+import packages.style as st
+
 app=Flask(__name__)
 
 app.config['UPLOAD_FOLDER'] = './Archivos'
@@ -21,9 +22,8 @@ def filtro(var):
         imgdata=request.get_json()
         print(type(imgdata['pixeles']))
         img=Imagen.Imagen(imgdata['pixeles'],imgdata['ancho'],imgdata['alto'])
-        return jsonify(img.color)
+        if var == "monet":
+            s = st.filtro("monet.jpeg")
+            return jsonify({"pixeles": s})
 
-@app.route("/hola",methods=["GET","POST"])
-def hola():
-    return jsonify({"h":"hola"})
 app.run()
