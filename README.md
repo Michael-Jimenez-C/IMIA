@@ -1,6 +1,6 @@
 # IMIA-Editor
 
-Es un proyecto en el que se buscaba hacer una interfaz sencilla para que un usuario pudiera subir una imagen y aplicarle un estilo mediante redes neuronales generativas
+Es un proyecto en el que se buscaba hacer una interfaz sencilla para que un usuario pudiera subir una imagen y aplicarle un estilo mediante redes neuronales de transferencia de estilo.
 
 Se utilizo la red preentrenada de tensorflow hub [Arbitrary image stylization](http://tfhub.dev/google/magenta/arbitrary-image-stylization-v1-256/2)
 
